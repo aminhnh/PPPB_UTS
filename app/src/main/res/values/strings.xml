@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">PPPB_UTS</string>
+    <string name="toc">By checking the box you agree to our Terms and Conditions.</string>
+    <string name="login">Already have an account? Log in</string>
+</resources>

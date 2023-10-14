@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingHorizontal="@dimen/horizontal_padding"
+    tools:context=".BookingActivity">
+
+    <TextView
+        android:id="@+id/txt_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:fontFamily="@font/poppins_black"
+        android:text="Book a Ticket"
+        android:textAlignment="center"
+        android:textFontWeight="900"
+        android:textSize="28sp"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="30dp" />
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/edit_text_date"
+        style="@style/CustomTextInputLayout"
+        android:layout_marginVertical="20dp"
+        android:layout_marginBottom="@dimen/editTextMargin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txt_title">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/input_date"
+            style="@style/CustomTextInputEditText"
+            android:cursorVisible="false"
+            android:focusable="false"
+            android:hint="Date"
+            android:inputType="none"
+            android:maxLines="1"
+            android:text="" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <TextView
+        android:id="@+id/txt_departure"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Departure from"
+        app:layout_constraintTop_toBottomOf="@id/edit_text_date"
+        android:layout_marginTop="10dp"
+        android:textSize="22dp"
+        android:textFontWeight="700"
+        />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/edit_text_station1"
+        style="@style/CustomTextInputLayout"
+        android:layout_marginBottom="18dp"
+        android:layout_width="0dp"
+        app:layout_constraintEnd_toStartOf="@id/guideline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txt_departure"
+        android:layout_marginEnd="10dp"
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/input_station1"
+            style="@style/CustomTextInputEditText"
+            android:paddingStart="20dp"
+            android:hint="Station"
+            android:inputType="text"
+            android:maxLines="1" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/edit_text_city1"
+        style="@style/CustomTextInputLayout"
+        android:layout_marginBottom="18dp"
+        android:layout_width="0dp"
+        app:layout_constraintStart_toStartOf="@id/guideline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txt_departure"
+        android:layout_marginStart="10dp"
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/input_city1"
+            style="@style/CustomTextInputEditText"
+            android:paddingStart="20dp"
+            android:hint="City"
+            android:inputType="text"
+            android:maxLines="1" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/txt_destination"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Destination to"
+        android:layout_marginTop="10dp"
+        android:textSize="22dp"
+        android:textFontWeight="700"
+        app:layout_constraintTop_toBottomOf="@id/edit_text_station1"
+        />
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/edit_text_station2"
+        style="@style/CustomTextInputLayout"
+        android:layout_marginBottom="18dp"
+        android:layout_width="0dp"
+        app:layout_constraintEnd_toStartOf="@id/guideline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txt_destination"
+        android:layout_marginEnd="10dp"
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/input_station2"
+            style="@style/CustomTextInputEditText"
+            android:paddingStart="20dp"
+            android:hint="Station"
+            android:inputType="text"
+            android:maxLines="1" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/edit_text_city2"
+        style="@style/CustomTextInputLayout"
+        android:layout_marginBottom="18dp"
+        android:layout_width="0dp"
+        app:layout_constraintStart_toStartOf="@id/guideline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txt_destination"
+        android:layout_marginStart="10dp"
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/input_city2"
+            style="@style/CustomTextInputEditText"
+            android:paddingStart="20dp"
+            android:hint="City"
+            android:inputType="text"
+            android:maxLines="1" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Spinner
+        android:id="@+id/spinner_class"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/edit_text_station2"
+        android:layout_marginTop="30dp"
+        />
+
+
+    <HorizontalScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/spinner_class"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ToggleButton
+                android:id="@+id/toggleButton1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tambah Makan Siang"
+                android:textOn="Tambah Makan Siang"
+                android:textOff="Tambah Makan Siang" />
+
+            <ToggleButton
+                android:id="@+id/toggleButton2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tambah Duduk Pinggir Jendela"
+                android:textOn="Tambah Duduk Pinggir Jendela"
+                android:textOff="Tambah Duduk Pinggir Jendela" />
+
+            <ToggleButton
+                android:id="@+id/toggleButton3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tambah Bagian Depan"
+                android:textOn="Tambah Bagian Depan"
+                android:textOff="Tambah Bagian Depan" />
+
+            <ToggleButton
+                android:id="@+id/toggleButton4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Perluas Kursi"
+                android:textOn="Perluas Kursi"
+                android:textOff="Perluas Kursi" />
+
+            <ToggleButton
+                android:id="@+id/toggleButton5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Bantuan Mengangkat Barang"
+                android:textOn="Bantuan Mengangkat Barang"
+                android:textOff="Bantuan Mengangkat Barang" />
+
+            <ToggleButton
+                android:id="@+id/toggleButton6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ruangan Ber-AC"
+                android:textOn="Ruangan Ber-AC"
+                android:textOff="Ruangan Ber-AC" />
+
+            <ToggleButton
+                android:id="@+id/toggleButton7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Penitipan Barang"
+                android:textOn="Penitipan Barang"
+                android:textOff="Penitipan Barang" />
+
+        </LinearLayout>
+
+
+    </HorizontalScrollView>
+
+    <TextView
+        android:id="@+id/txt_price"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/scrollView"
+        android:text="Total Price : "
+        android:textSize="24dp"
+        android:layout_marginTop="10dp"
+        />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_book"
+        style="@style/CustomMaterialButton"
+        android:text="Book"
+        android:layout_marginBottom="80dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
